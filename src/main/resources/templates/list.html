@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Users List</title>
+</head>
+<body>
+	<h1>Users List</h1>
+	<a href="/add">Add User</a>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th><th>IMAGE</th><th>FULL NAME</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="user:${users}" th:object="${user}">
+				<td th:text="*{id}"></td>
+				<td th:text="*{img}"></td>
+				<td th:text="*{fullName}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
