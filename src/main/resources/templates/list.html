@@ -8,7 +8,7 @@
 <body>
 	<h1>Users List</h1>
 	<a href="/add">Add User</a>
-	<table>
+	<table border="1">
 		<thead>
 			<tr>
 				<th>ID</th><th>IMAGE</th><th>FULL NAME</th>
@@ -17,7 +17,7 @@
 		<tbody>
 			<tr th:each="user:${users}" th:object="${user}">
 				<td th:text="*{id}"></td>
-				<td th:text="*{img}"></td>
+				<td> <img th:alt="*{fullName+' image'}" th:src="*{imageUrl}" height="auto" width="100"> </td>
 				<td th:text="*{fullName}"></td>
 			</tr>
 		</tbody>
